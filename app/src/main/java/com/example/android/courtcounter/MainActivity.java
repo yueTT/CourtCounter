@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    int score = 0;
+    int score_a = 0;
     int score_b = 0;
 
     @Override
@@ -17,19 +17,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+/***
+ *  increase the score of teamA
+ */
+    public void point6(View view){
+        score_a = score_a + 6;
+        displayForTeamA(score_a);
+    }
+
     public void point3(View view){
-        score = score + 3;
-        displayForTeamA(score);
+        score_a = score_a + 3;
+        displayForTeamA(score_a);
     }
 
     public void point2(View view){
-        score = score + 2;
-        displayForTeamA(score);
+        score_a = score_a + 2;
+        displayForTeamA(score_a);
     }
 
     public void point1(View view){
-        score = score + 1;
-        displayForTeamA(score);
+        score_a = score_a + 1;
+        displayForTeamA(score_a);
+    }
+
+
+    /*
+    *  increase the score of teamB
+    * */
+    public  void TeamB6(View view){
+        score_b = score_b + 6;
+        displayForTeamB(score_b);
     }
 
     public void TeamB3(View view){
@@ -47,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamB(score_b);
     }
 
+
     /**
      * Displays the given score for Team A.
      */
@@ -60,13 +78,14 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(score));
     }
 
+
     /**
      * method that makes the value return to 0
      * ***/
     public void returnZero(View view){
-        score = 0;
+        score_a = 0;
         score_b = 0;
-        displayForTeamA(score);
+        displayForTeamA(score_a);
         displayForTeamB(score_b);
     }
 
